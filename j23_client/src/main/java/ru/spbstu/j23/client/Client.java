@@ -7,9 +7,12 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import ru.spbstu.j23.dto.CreateUserRequest;
 import ru.spbstu.j23.dto.CreateUserResponse;
+import ru.spbstu.j23.dto.GetUsersRequest;
+import ru.spbstu.j23.dto.GetUsersResponse;
 
 
 public class Client {
@@ -53,6 +56,35 @@ public class Client {
 		}).limit(10).toArray(CompletableFuture[]::new));
 
 		cf.get();
+		
+		
+		try (Socket socket = new Socket(serverAddress, port)) {
+			System.out.println("Connected to server: " + socket.getRemoteSocketAddress());
+			ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+			ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+			try {
+				GetUsersRequest request = new GetUsersRequest();
+				out.writeObject(request);
+				Object response = in.readObject();
+				if (response instanceof GetUsersResponse) {
+					GetUsersResponse userResponse = (GetUsersResponse) response;
+					userResponse.getUsers().forEach(user -> 
+						System.out.println(user.getId())
+					);
+				}
+			} catch (Exception e) {
+			} finally {
+				out.close();
+				in.close();
+			}
+
+		} catch (UnknownHostException e) {
+			System.out.println("Unknown host: " + serverAddress);
+		} catch (IOException e) {
+			System.out.println("Error connecting to server: " + e.getMessage());
+		}
+		
+		
 //        for (int i = 0; i < 10; i++) {
 //			CompletableFuture.runAsync(()->{
 //				try (Socket socket = new Socket(serverAddress, port)) {
