@@ -11,7 +11,7 @@
 7. [Restaurant Finder Bot](https://github.com/mycelium/j23#restaurant-finder-bot)
 
 
-### Commone requiremens (for all variants):
+### Common requiremens (for all variants):
 
 1. Sources and artifacts
 - Code should be somewhere in GitHub (your own)
