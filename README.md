@@ -1,4 +1,4 @@
-## Java lessons | Sprign 2023
+## Java lessons | Spring 2023
 
 ### Tasks
 
