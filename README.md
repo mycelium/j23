@@ -13,12 +13,16 @@
 
 ### Commone requiremens (for all variants):
 
-1. Code should be somewhere in GitHub (your own)
-- README with guide!!!
+1. Sources and artifacts
+- Code should be somewhere in GitHub (your own)
+  - README with guide!!!
+- Target artifact for app - runnable fat jar
+- Target build object for deploy - docker container
+- Build tool should be used (Maven or Gradle)
 2. Tech stack
 - Telegram API
-- Java 20
-- Spring 6
+- Java 20 / Kotlin / Scala 3
+- Spring 5 / Spring 6
 - **Spring Boot is prohibited for all students except Кулыгин**
 - Docker, Docker compose, Docker Hub
 3. Try to develop "good architecture"
