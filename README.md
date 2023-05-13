@@ -185,14 +185,57 @@
 
 1. Sign up
 2. Sign in
-
+3. Event
+- Create event (summary, date + time, duration)
+- List events (next <number of events>, day, week)
+- Import event as `.ics` file
+- Delete event
+- Update event
+4. Recurring events
+- Create reccuring events (hourly, daily, weekly, monthly)
+- Show recurring tasks
+- Update recurring tasks
+- Delete recurring tasks
+5. Reminder
+- Remind about upcoming event
+  
 ##### Bonus
 
+1. Integration with calendar (google, yandex, teamup, etc)
+- Add calender integration
+- Add events to calenders from bot
+- Remind about upcoming events from calendars
+2. Collaborative events
+- Add collaborators to event
+- Nearest events (geolocation)
+   
 #### Restaurant Finder Bot
 
 ##### Features
 
 1. Sign up
 2. Sign in
+3. Preferences
+- Show user preferences
+- Add preferences (e.g. vegetarian, allergies, intalian, fish, etc)
+- Delete preferences
+4. Find a restaruant
+- Request a film with query (location, kitchen, keywords, etc)
+  - If some criterias are not set - user preferences should be used
+  - Allow setting `skip` for criteria to skip it
+- Request a random restaurant (location + area)
+5. Visit list
+- Add restaurant to visit list
+- Show list
+- Mark restaurant as visited
+- Remove restaurant from list
 
 ##### Bonus
+
+1. Marks
+- Add marks to restaurants (-10..0..10)
+- Find similar restaurant
+- Add marks to dishes
+2. Routes
+- Create route for visting several restaurant to eat different dishes
+- Save and share routes
